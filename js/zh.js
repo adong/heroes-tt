@@ -5,7 +5,7 @@
   const L = Kit.lang;
   const t = (en) => L.t(en);
   const list = (o) => Object.keys(o).map((k) => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
-  L.keep(['TEDDY', 'TOMMY', 'Teddy', 'Tommy', 'TEDDY & TOMMY', 'TEDDY + TOMMY', 'HEROES TT', 'TT', 'Claude Code',
+  L.keep(['TEDDY', 'TOMMY', 'Teddy', 'Tommy', 'TEDDY & TOMMY', 'TEDDY + TOMMY', 'HEROES TT', 'Heroes TT', 'TT', 'Claude Code',
     'ZOOM', 'LUNA', 'BRUNO', 'BOLT', 'ZOMBO', 'GOOEY', 'ZIPPY', 'CLANK', 'Esc',
     `${HTT.TITLE} · Teddy & Tommy`, HTT.TITLE]);
 
