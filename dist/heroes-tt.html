@@ -4290,6 +4290,7 @@ HTT.TITLE = 'Heroes TT'; // the dashboard's spelling; the logo font is all capit
       const bx = sp.x + (h.team ? -1.5 : 1.5), bz = (h.slot - 2) * 2.2;
       v.root.position.set(bx + (h.team ? -1 : 1), 0.62, bz);
       v.root.rotation.y = h.team ? Math.PI / 2 : -Math.PI / 2;
+      v.bar.g.rotation.y = -v.root.rotation.y; // hidden while he naps, but square to the camera the moment he wakes
       v.p.root.rotation.x = Math.PI / 2;
       v.p.root.position.y = 0;
       Kit.people.pose(v.p, 0, 'stand', 1);
