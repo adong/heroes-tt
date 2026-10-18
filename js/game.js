@@ -127,6 +127,7 @@
     while (d < -Math.PI) d += Math.PI * 2;
     v.yaw += d * k;
     v.root.rotation.y = v.yaw;
+    v.bar.g.rotation.y = -v.yaw; // the bar's pieces sit side by side: keep them square to the camera, not turned with the hero
     const moving = Math.hypot(h.vx, h.vy) > 0.5;
     let mode = '';
     if (h.leap) mode = h.kind === 'teddy' ? 'jumpshot' : 'jump';
@@ -169,6 +170,7 @@
       v.yaw = u.team === 1 ? -Math.PI / 2 : Math.PI / 2;
       v.root.position.set(u.x, 0, u.y);
       v.root.rotation.y = v.yaw;
+      v.bar.g.rotation.y = -v.yaw;
     }
     v.u = u;
     scene.add(v.root);
@@ -197,6 +199,7 @@
       while (d < -Math.PI) d += Math.PI * 2;
       v.yaw += d * k;
       v.root.rotation.y = v.yaw;
+      v.bar.g.rotation.y = -v.yaw;
     }
     A.animMinion(v, st.time + (u.id % 7), moving, !moving && !!u.focus && u.atkT > u.rate - 0.3);
     v.bar.g.visible = u.hp < u.maxHp;
@@ -1237,6 +1240,6 @@
     check: () => ({ rules: HTT.check.rules(), sabotage: HTT.check.sabotage() }),
     soak: (o) => HTT.check.soak(o),
     layout,
-    st,
+    st, scene, camera, views,
   };
 })();
